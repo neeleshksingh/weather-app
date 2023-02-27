@@ -68,6 +68,11 @@ button:hover{
 .last-3{
   margin-top: 50px;
   display: flex;
-  border: 1px solid;
   width: 50%;
+}
+ul{
+  list-style: none;
+}
+li{
+  font-size: 30px;
 }

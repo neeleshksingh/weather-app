@@ -34,7 +34,9 @@ function App() {
         if (update.length === 3) {
           update.pop()
         }
-        update.unshift('')
+        if(search !== '' && !update.includes(search)){
+          update.unshift(search)
+        }
         return update
       })
     }
