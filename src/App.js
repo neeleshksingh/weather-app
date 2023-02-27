@@ -10,7 +10,7 @@ function App() {
 
   const handleSearch = () =>{
     if(search !== ''){
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=8c078b7d5c71f260570371ee6b6b765b`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=8c078b7d5c71f260570371ee6b6b765b`)
       .then(res => res.json())
       .then(data =>{
         setWeather(data)
