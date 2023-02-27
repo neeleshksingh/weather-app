@@ -7,7 +7,6 @@ import Weather from './components/weather';
 function App() {
   const [search, setSearch] = useState('')
   const [weather, setWeather] = useState([])
-  const [lastThree, setLastThree] = ([])
 
   const handleSearch = () =>{
     if(search !== ''){
@@ -16,7 +15,7 @@ function App() {
       .then(data =>{
         if(data.cod === 200){
           setWeather(data)
-          last3(search)
+
         }
         else{
           alert("Enter Valid City Name")
@@ -26,12 +25,7 @@ function App() {
       })
     }
   }
-  const last3 = (cityName) =>{
-    setLastThree(prev =>{
-      const update = [...prev, cityName].slice(-3)
-      return update
-    })
-  }
+
 
   return (
     <div className="App">
@@ -47,9 +41,7 @@ function App() {
       </div>
       <div className='last-3'>
           <h2 style={{color: 'blue'}}>Last 3 City entries</h2>
-          {lastThree ? lastThree.map((city, index)=>(
-            <p key={index}>{city}</p>
-          )):null}
+
       </div>
     </div>
   );
