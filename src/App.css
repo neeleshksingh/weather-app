@@ -76,3 +76,7 @@ ul{
 li{
   font-size: 30px;
 }
+.err{
+  color: red;
+  font-size: 50px;
+}

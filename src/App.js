@@ -9,6 +9,7 @@ function App() {
   const [weather, setWeather] = useState([])
   const [lastSearch, setLastSearch] = useState([])
   const [showlast, setShowlast] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSearch = () => {
     if (search !== '') {
@@ -19,12 +20,13 @@ function App() {
             setWeather(data)
             setLastSearch(prev => [search, ...prev.slice(0, 2)])
             setShowlast(true)
+            setError('')
           }
           else {
-            alert("Enter Valid City Name")
+            setError("Enter Valid City Name")
           }
         }).catch(e => {
-          alert(e)
+          setError(e.message)
         })
     }
     else {
@@ -49,6 +51,9 @@ function App() {
           <input type="text" placeholder='Enter City Name' value={search} onChange={(e) => { setSearch(e.target.value) }} />
           <button onClick={handleSearch}>Search</button>
         </div>
+        {error && <div>
+          <h2 className='err'>{error}</h2>
+        </div>}
       </div>
       <div className='con2 flex-col'>
         <Weather weatherdata={weather} />
