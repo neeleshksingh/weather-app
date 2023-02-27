@@ -65,3 +65,9 @@ button:hover{
 .weth{
   gap: 10px;
 }
+.last-3{
+  margin-top: 50px;
+  display: flex;
+  border: 1px solid;
+  width: 50%;
+}
