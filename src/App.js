@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import Weather from './components/weather';
 
 
 function App() {
@@ -24,17 +25,12 @@ function App() {
       <div className='con1 flex-col'>
         <h1>Weather App</h1>
         <div className='search'>
-          <input type="text" placeholder='Enter City Name' onChange={(e)=>{setSearch(e.target.value)}}/>
+          <input type="text" placeholder='Enter City Name' value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
           <button onClick={handleSearch}>Search</button>
         </div>
       </div>
       <div className='con2 flex-col'>
-        <h2>Weather Details of City :</h2>
-        <h2>Current Temperature :</h2>
-        <h2>Temperature Range :</h2>
-        <h2>Humidity :</h2>
-        <h2>Sea Level :</h2>
-        <h2>Ground Level :</h2>
+        <Weather weatherdata = {weather}/>
       </div>
     </div>
   );

@@ -46,7 +46,6 @@ h1{
   position: relative;
 }
 .con2{
-  border: 1px solid;
   margin-top: 20px;
   width: 100%;
 }
@@ -62,4 +61,7 @@ button{
 }
 button:hover{
   cursor: pointer;
+}
+.weth{
+  gap: 10px;
 }
